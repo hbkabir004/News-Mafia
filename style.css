@@ -5,3 +5,9 @@ body {
 .nav-color {
   color: #5d5fef;
 }
+
+footer p {
+  color: #949494;
+  font-family: "Playfair Display", serif;
+  font-size: 16px;
+}
