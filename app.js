@@ -2,6 +2,7 @@ const loadCatagory =()=>{
     fetch(`https://openapi.programming-hero.com/api/news/categories`)
     .then(res=>res.json())
     .then(data=>displayCatagory(data.data.news_category))
+    // .then(data=>console.log(data.data.news_category))
     .catch(error=>console.log(error))
 }
 
@@ -42,7 +43,11 @@ const displayCatagory = catagories =>{
     });
 
     const displayNews = newsArray =>{
-        // console.log(newsArray);
+      //Sorting Array according to total view
+      newsArray.sort((a, b) => {
+        return b.total_view - a.total_view;
+        });
+        
         const inputField =document.getElementById('input-field');
         inputField.value = `${newsArray.length} items found for this Catagory`;
         
@@ -52,7 +57,7 @@ const displayCatagory = catagories =>{
             let newsDetails = news.details;
             newsDetails = newsDetails.slice(0, 300);
             // let newsDetailsLast = news.details.slice(0, 50);
-            // console.log(news);
+            
             const newsDiv = document.createElement('div');
             newsDiv.classList.add('card');
             newsDiv.classList.add('mb-3');
@@ -102,12 +107,15 @@ const displayCatagory = catagories =>{
         </div>
             `;
             newsContainer.appendChild(newsDiv);
+
+            
             
         });
         
         toggleSpinner(false);
 
         
+        console.log(newsArray);
     }
 
 }
@@ -123,7 +131,7 @@ const loadDetail = async(id) =>{
 
 // Display News Details 
     const showDetail = news =>{
-       console.log(news[0]);
+      //  console.log(news[0]);
        news.forEach(x=>{
            const modalTitle = document.getElementById('newsDetailModalLabel');
            modalTitle.innerText= x.title;
@@ -133,8 +141,15 @@ const loadDetail = async(id) =>{
            <p><b>Description: </b>${x.details.slice(0,500)}<span>...</span></p>
            <h5>Published on <span class="fw-bold">${x.author.published_date}</span></h5>
            `;
+           
        })
     } 
 
-
+// const loadDefaultCatagory =()=>{
+//   fetch(`https://openapi.programming-hero.com/api/news/category/${catagory.category_id}`)
+//   .then(res=>res.json())
+//   .then(data=>console.log(data))
+//   .catch(error=>console.log(error))
+// }
 loadCatagory();
+// loadDefaultCatagory();
