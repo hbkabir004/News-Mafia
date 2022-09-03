@@ -88,6 +88,43 @@
       <hr class="container" />
     </header>
     <main>
+      <!-- Modals -->
+      <section>
+        <!-- Button trigger modal -->
+
+        <!-- Modal -->
+        <div
+          class="modal fade"
+          id="newsDetailModal"
+          tabindex="-1"
+          aria-labelledby="newsDetailModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title" id="newsDetailModalLabel"></h4>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div id="modal-body" class="modal-body"></div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <!-- Catagories Section-->
       <section class="container">
         <div id="catagories" class="d-flex justify-content-between"></div>
@@ -95,9 +132,21 @@
       <br />
       <input
         type="text"
-        class="form-control container"
-        id="exampleInputEmail1"
+        class="form-control container fw-bold"
+        id="input-field"
       />
+      <!-- Spinner -->
+      <section>
+        <div
+          id="spinner"
+          class="d-flex justify-content-center align-items-center d-none"
+          style="height: 200px"
+        >
+          <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
+      </section>
       <!-- NEWS Section -->
       <section id="news-container" class="container my-4"></section>
     </main>
