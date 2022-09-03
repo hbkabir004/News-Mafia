@@ -23,8 +23,9 @@ const displayCatagory = catagories =>{
         catagoryDiv.classList.add('btn');
         catagoryDiv.classList.add('btn-outline-primary');
         const catagoryID = `${catagory.category_id}`;
-        catagoryDiv.classList.add('mx-3');
-        catagoryDiv.classList.add('px-3');
+        catagoryDiv.classList.add('mx-lg-3');
+        catagoryDiv.classList.add('px-lg-3');
+        catagoryDiv.classList.add('my-1');
         catagoryDiv.setAttribute('id', `${catagoryID}`);
         catagoryDiv.innerText=catagory.category_name;
         catagoryContainer.appendChild(catagoryDiv);
@@ -68,8 +69,8 @@ const displayCatagory = catagories =>{
               <div class="d-flex justify-content-between mt-5">
                 <img
                   src="${news.author.img}"
-                  class="rounded-circle me-2"
-                  style="width: 55px; height:50px"
+                  class="rounded-circle me-1"
+                  style="width: 50px; height:50px"
                 />
                 <p class="card-text">
                   <small class="fw-bold">${news.author.name ? news.author.name : 'No Data Available' }</small>
@@ -83,7 +84,7 @@ const displayCatagory = catagories =>{
                   <span class="ms-1">${news.total_view ? news.total_view : 'No Data Available'}</span>
                 </div>
 
-                <div class="mt-4">
+                <div class="mt-4 d-md-block d-none">
                 <a class="px-2"><iconify-icon icon="bi:star-half"></iconify-icon></a>
                 <a class="px-2"><iconify-icon icon="bi:star"></iconify-icon></a>
                 <a class="px-2"><iconify-icon icon="bi:star"></iconify-icon></a>
@@ -91,7 +92,7 @@ const displayCatagory = catagories =>{
                 <a class="px-2"><iconify-icon icon="bi:star"></iconify-icon></a>
                 </div>
 
-                <div class="mt-4" style="font-size:25px">
+                <div class="mt-4 me-lg-0 me-sm-5" style="font-size:25px">
                 <a onclick="loadDetail('${news._id}')" data-bs-toggle="modal"
                 data-bs-target="#newsDetailModal"><iconify-icon icon="carbon:next-filled"></iconify-icon></a>
                 </div>

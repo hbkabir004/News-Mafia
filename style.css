@@ -9,10 +9,13 @@ body {
 footer p {
   color: #949494;
   font-family: "Playfair Display", serif;
-  font-size: 16px;
+  font-size: 20px;
   background-color: white;
   height: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+footer {
+  margin: 0;
 }
